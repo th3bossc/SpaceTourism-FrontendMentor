@@ -34,8 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [View Site](https://th3bossc.github.io/SpaceTourism-FrontendMentor/)
 
 ## My process
 
@@ -65,7 +64,5 @@ I learnt how to use Angular's signals and router more profusely than I had ever 
 - Frontend Mentor - [@th3bossc](https://www.frontendmentor.io/profile/th3bossc)
 
 ## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 
 I thank my collegues for helping me in the challenges i faced, as well as the youtube channels, Kevin Powell and webdevsimplified for the robust frontend tips which came in handy while working on this website
