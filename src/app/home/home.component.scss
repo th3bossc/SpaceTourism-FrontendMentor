@@ -80,3 +80,12 @@
         }
     }
 }
+
+@media (width < 800px) {
+    .container {
+        .circle {
+            margin : 100px 0;
+        }
+    }
+    
+}
