@@ -1,0 +1,161 @@
+.navbar {
+    z-index : 1000;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    position : fixed;
+    width : 100%;   
+    top : 30px;
+    left : 0;
+    height : 5rem;
+    .icon {
+        display : flex;
+        align-items: center;
+        padding-left : 30px;
+    }
+    .open-icon, .close-icon {
+        display : none;
+    }
+    .links {
+        .line {
+            width : 50%;
+            color: darkslategray;
+            position : absolute;
+            transform: translateX(-110%);
+        }
+        display : flex;
+        gap : 50px;
+        // width : 100%;
+        align-items: center;
+        margin-left : 70px;
+        padding : 0 100px;
+        height : 100%;
+        backdrop-filter: blur(30px) brightness(120%); 
+        border-radius: 8px;
+        
+        .link {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-family: 'Barlow condensed', sans-serif;
+            font-weight: 300;
+            font-size: 1.2rem;
+
+            height : 100%;
+            position: relative;
+            .nums {
+                padding-right : 10px;
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
+            &:hover {
+                &::after {
+                    content : '';
+                    outline : 1px solid #979797;
+                    width : 100%;
+                    position: absolute;
+                    bottom : 0;
+                    left : 0;
+                    z-index : 100;
+                }
+            }
+            &.active {
+                &::after {
+                    content: '';
+                    outline : 1px solid white;
+                    width : 100%;
+                    position : absolute;
+                    bottom : 0;
+                    left : 0; 
+                    z-index : 100;
+                }
+            }
+        }
+    }
+}
+
+@media (width >= 800px) and (width < 1166px) {
+    .navbar {
+        grid-template-columns: 25% 75%;
+        top : 0;
+        .links {
+            gap : 1.5rem;
+            justify-content: flex-end;
+            .line {
+                display: none ;
+            }
+            .link {
+                .nums {
+                    padding-right : 5px;
+                    transition : all 200ms ease-in-out;
+                }
+            }
+            transition : all 200ms ease-in-out;
+        }
+        transition : all 200ms ease-in-out;
+    }
+}
+
+@media (width < 800px) {
+    .navbar {
+        padding : 0 20px;
+        display : flex;
+        justify-content: space-between;
+        transition : all 100ms ease-in-out;
+        .icon {
+            padding-left : 10px;
+        }
+        .open-icon, .close-icon {
+            display : block;
+        }  
+        
+        .links {
+            display : none;
+            padding : 0;    
+            gap : 2px;
+            align-items: flex-start;
+            &.open {
+                height : 100%;
+                top : 100px;
+                position : fixed;
+                right : 0;
+                display : flex;
+                width : 60%;
+                gap : 0.5rem;
+                align-items: flex-start;
+                .line {
+                    display: none;
+                }
+                .link {
+                    padding : 1rem 3rem;
+                    width : 100%;
+                    flex-basis : 0;
+                    // outline : 1px solid white;
+                    display : flex;
+                    align-items: center;
+                    &:hover {
+                        border-right : 0.25rem solid #979797;
+                        &::after {
+                            content : none;
+                        }
+
+                    }
+                    &.active {
+                        border-right : 0.25rem solid white;
+                        &::after {
+                            content : none;
+                        }
+                    }
+                }
+                // backdrop-filter: none;
+                flex-direction: column;
+            }
+        }
+
+    }
+}
+
+.main-content {
+    color : white;
+    background-size: cover;
+}

@@ -1,0 +1,19 @@
+<nav class="navbar">
+    <div class="icon">
+        <img src="./assets/shared/logo.svg" [routerLink]="['', 'main', 'home']">
+    </div>
+    <button class="open-icon" *ngIf="!open" (click)="open = !open"> <img src="./assets/shared/icon-hamburger.svg"> </button>
+    <button class="close-icon" *ngIf="open" (click)="open = !open"> <img src="./assets/shared/icon-close.svg"></button>
+    <div [class]="open ? 'links open' : 'links'">
+        <hr class="line">
+        <a class="link" [ngClass]="{active : router.url === '/main/home'}" (click)="routeTo('home')" routerLinkActive="active"> <span class="nums"> 00 </span> HOME </a>
+        <a class="link" [ngClass]="{active : router.url === '/main/dest'}" (click)="routeTo('dest')"> <span class="nums"> 01 </span> DESTINATION </a>
+        <a class="link" [ngClass]="{active : router.url === '/main/crew'}" (click)="routeTo('crew')"> <span class="nums"> 02 </span> CREW </a>
+        <a class="link" [ngClass]="{active : router.url === '/main/tech'}" (click)="routeTo('tech')"> <span class="nums"> 03 </span> TECHNOLOGY </a>
+    </div>
+</nav>
+
+
+<main class="main-content" [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
+    <router-outlet #outlet="outlet"></router-outlet>
+</main>

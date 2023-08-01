@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="intro">
+        <span class="nums"> 02 </span>
+        <span> MEET YOUR CREW </span>
+    </div>
+    <div class="content">
+        <div class="text">
+            <div class="main-content">
+                <div class="role">
+                    {{ data.role | uppercase }}
+                </div>
+                <div class="name">
+                    {{ data.name | uppercase}}
+                </div>
+                <div class="desc">
+                    {{ data.bio }}
+                </div>
+            </div>
+            <div class="links">
+                <a *ngFor="let i of dotCount" [class]="'link ' + (i === target() ? 'active' : '')" (click)="newCrew(i)"></a>
+            </div>
+        </div>
+        <div class="image">
+            <img [src]="data.images.png">
+            <hr>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,128 @@
+.container {
+    margin-left : 150px;
+    margin-right : 150px;
+    margin-top : 150px;
+    display : grid;
+    grid-template-columns: 40% 40%;
+    gap : 10rem;
+    .image {
+        display : flex;
+        height : 100%;
+        flex-direction: column;
+        gap : 50px;
+        justify-content: center;
+        align-items: center;
+        .intro {
+            align-self: flex-start;
+            .nums {
+                padding-right : 1rem;
+            }
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight : 400;
+            font-size : 1.5rem;
+        }
+    }
+    .text {
+        margin-top : 80px;
+        display : flex;
+        flex-direction: column;
+        gap : 2rem;
+        .dests {
+            display : flex;
+            gap : 1.5rem;
+            font-family : 'Barlow Condensed', sans-serif;
+            .link {
+                padding : 0.6rem 0;
+                cursor: pointer;
+                &.active {
+                    position: relative;
+                    &::after {
+                        content : '';
+                        outline : 1px solid white;
+                        bottom : 0;
+                        left : 0;
+                        position : absolute;
+                        width : 100%;
+                    }
+                }
+                &:hover {
+                    position : relative;
+                    &::after {
+                        content : '';
+                        outline : 1px solid #979797;
+                        bottom : 0;
+                        left : 0;
+                        position : absolute;
+                        width : 100%;
+                    }
+                }
+            }
+        }
+        .title {
+            font-family : 'Bellefair', sans-serif;
+            font-size : 6rem;
+        }
+        .desc {
+            font-family : 'Barlow Condensed', sans-serif;
+        }
+        hr {
+            width : 100%;
+        }
+
+        .info {
+            display : flex;
+            justify-content: space-between;
+            .avg-distance, .travel-time {
+                display : flex;
+                flex-direction: column;
+                gap : 0.8rem;
+                .info-name {
+                    font-family : 'Barlow Condensed', sans-serif;
+                }
+                .info-content {
+                    font-family : 'Bellefair', sans-serif;
+                    font-size : 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+
+@media (width < 1166px) {
+    .container {
+        display : flex;
+        flex-direction: column;
+        gap : 1rem;
+        margin : 150px 30px 50px 30px;
+        justify-content: center;
+        .image {
+            .img {
+                img {
+                    height : 200px;
+                }
+            }
+        }
+        .text {
+            margin : 0;
+            align-items: center;
+            .desc, .title {
+                text-align: center;
+            }
+            .info {
+                width : 100%;
+            }
+        }
+    }
+}
+
+@media (width < 800px) {
+    .container {
+        .image {
+            .intro {
+                width : 100%;
+                text-align: center;
+            }
+        }
+    }
+}

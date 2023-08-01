@@ -1,0 +1,82 @@
+.container {
+    display : grid;
+    grid-template-columns: 30% 70%;
+    margin-top : 300px;
+    color : white;
+    margin-left : 120px;
+    margin-right : 120px;
+    .text {
+        .intro {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight : 200;
+            font-size : 1.5rem;
+            letter-spacing: 5;
+            text-align: justify;
+            color : var(--secondary);
+        }
+        .sub-text {
+            font-size : .9rem;
+            font-weight: 100;
+            color : var(--secondary);
+        }
+        .space {
+            padding : 30px 0;
+            font-size : 6rem;
+            font-family: 'Bellefair', serif;
+        }
+    }
+    .circle {
+        margin-left : auto;
+        margin-top : auto;
+        .explore {
+            display : flex;
+            align-items: center;
+            justify-content: center;
+            color : black;
+            padding : 2.8rem;
+            background-color: var(--tertiary);
+            border-radius : 50%;
+            aspect-ratio: 1;
+            font-family: 'Bellefair', serif;
+            font-size : 2rem;
+            &::before {
+                content : '';
+                position: absolute;
+                padding : 0px;
+                background-color: #24262f;
+                border-radius: 50%;
+                aspect-ratio: 1;
+                z-index : -1;
+                transition : all 120ms ease-in-out;
+            }
+            &:hover {
+                &::before {
+                    padding : 10rem;
+                }
+            }
+            &.animate::before {
+                padding : 100rem;
+                z-index: 10;
+            }
+        }
+    }
+}
+
+@media (width < 1166px) {
+    .container {
+        margin-top : 150px;
+        display : flex;
+        flex-direction: column;
+        align-items: center;
+        .text {
+            text-align: center;
+            .intro {
+                text-align: center;
+            }
+        }
+        .circle {
+            margin : auto;
+            margin-top : 100px;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="image">
+        <div class="intro">
+            <span class="nums"> 01 </span>
+            PICK YOUR DESTINATION
+        </div>
+        <div class="img">
+            <img [src]="data.images.png">
+        </div>
+    </div>
+    <div class="text">
+        <div class="dests">
+            <a *ngFor="let dest of allDests; let i = index" [class]="'link ' + ((target() === i) ? 'active' : '')" (click)="newDestination(i)"> {{ dest }}</a>
+        </div>
+        <div class="title">
+            <span> {{ data.name }} </span>
+        </div>
+        <div class="desc">
+            {{ data.description }}
+        </div>
+        <hr>
+        <div class="info">
+            <div class="avg-distance">
+                <span class="info-name"> AVG. DISTANCE</span>
+                <span class="info-content"> {{ data.distance }} </span>
+            </div>
+            <div class="travel-time">
+                <span class="info-name"> EST. TRAVEL TIME </span>
+                <span class="info-content"> {{ data.travel }} </span>
+            </div>
+        </div>
+    </div>
+</div>
+

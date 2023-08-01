@@ -1,0 +1,154 @@
+.container {
+    .intro {
+        width : 50%;
+        position : relative;
+        top : 150px;
+        left : 150px;
+        .nums {
+            padding-right : 1rem;
+        }
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight : 400;
+        font-size : 1.5rem;
+    }
+    .content {
+        margin : 150px 150px 0 150px; //top right bottom left
+        display : grid;
+        grid-template-columns: 60% 40%;
+    
+        .text {
+            display : flex;
+            flex-direction: column;
+    
+            .main-content {
+                display : flex;
+                flex-direction: column;
+                gap : 1rem;
+                .role {
+                    font-family : 'Bellefair', sans-serif;
+                    font-size : 1.5rem;
+                    margin-top : 10rem;
+                }
+                .name {
+                    font-family : 'Bellefair', sans-serif;
+                    font-size : 2.5rem;
+                }
+                .desc {
+                    width : 60%;
+                    color : var(--secondary);
+                }
+            }
+            .links {
+                position : fixed;
+                bottom : 4rem;
+                display: flex;
+                gap : 25px;
+                z-index : 0;
+    
+                .link {
+                    position : relative;
+                    &::after {
+                        content : '';
+                        position : absolute;
+                        padding : 5px;
+                        z-index : 1;
+                        background-color: #363841;
+                        left : 0;
+                        border-radius: 50%;
+                    }
+    
+                    &.active::after {
+                        background-color: white;
+                    }
+                    &:hover::after {
+                        background-color: #979797;
+                    }
+                }
+            }
+        }
+        .image {
+            hr {
+                display : none;
+            }
+        }
+    }
+}
+
+@media (width >= 800px) and (width < 1166px) {
+    .container {
+        .intro {
+            align-self : flex-start;
+            left : 30px;
+        }
+        .content {
+            margin : 200px 30px;
+            display : flex;
+            flex-direction: column;
+            align-items: center;
+            gap : 5rem;
+            .text {
+                gap : 1rem;
+                align-items: center;
+                .main-content {
+                    justify-content : flex-start;
+                    align-items: center;
+                    text-align: center;
+                    .role {
+                        margin-top : 0;
+                    }
+                }
+                .links {
+                    position : static;
+                    .link::after {
+                        background-color: #41434c;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (width < 800px) {
+    .container {
+        .intro {
+            text-align: center;
+            top : 150px;
+            left : 0;
+            width : 100%;
+        }
+        .content {
+            margin : 200px 30px;
+            display : flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap : 5rem;
+            .text {
+                align-items: center;
+                gap : 2rem;
+                flex-direction: column-reverse;
+                .main-content {
+                    justify-content: center;
+                    align-items: center;
+                    text-align : center;
+                    .role {
+                        margin-top : 0;
+                    }
+                }
+                .links {
+                    position : static;
+                }
+            }
+            .image {
+                display : flex;
+                flex-direction: column;
+                img {
+                    height : 20rem;
+                }
+                hr {
+                    width : 100%;
+                    display : block;
+                }
+            }
+        }
+    }
+}
